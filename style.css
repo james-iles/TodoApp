@@ -1,0 +1,199 @@
+:root{
+    --primary-color: #1c1d20; 
+    --secondary-color: #4a4d57;
+    --background-color: #101114;
+    --accent-color: #00ffc4;
+    --text-color: #f9f9f9;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16pt;
+    color: var(--text-color);
+}
+
+body{
+    min-height: 100vh;
+    padding: 10px;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    margin-top: 100px;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.wrapper{
+    width: 700px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#todo-input{
+    box-sizing: border-box;
+    padding: 12px 20px; /* top-bottom, left-right */
+    width: 100%;
+    border: 1px solid var(--secondary-color);
+    background: none;
+    border-radius: 100px;
+    font: inherit;
+    color: var(--text-color);
+    caret-color: var(--accent-color);
+}
+
+#todo-input:focus{
+    outline: none; /* Remove default blue outline */
+}
+
+form{
+    position: relative;
+}
+
+#add-button{
+    position: absolute;
+    top: 0;
+    right: 0; /* Align to the right edge of the form, because the form position is relative */
+
+    background-color: var(--accent-color);
+    height: 100%;
+    padding: 0 30px;
+    border: none;
+    border-radius: 100px;
+    font: inherit;
+    font-weight: 600;
+    color: var(--background-color);
+    cursor: pointer;
+}
+
+.todo{
+    margin-bottom: 10px;
+    padding: 0 16px;
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.todo .todo-text{
+    padding: 15px;
+    padding-right: 0;
+    flex-grow: 1; /* Take up all remaining space and make sure the d elete button is always far-right */
+    transition: 0.3s ease;
+}
+
+.delete-button{
+    padding: 3px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center; /* Center the SVG horizontally */
+    align-items: center; /* Center the SVG vertically */
+    cursor: pointer;
+}
+.delete-button svg{
+    transition: 0.3s ease;
+}
+.delete-button:hover svg{
+    fill: #ff0033;
+}
+
+.custom-checkbox{
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;
+    display: flex;
+    justify-content: center; /* Center the SVG horizontally */
+    align-items: center; /* Center the SVG vertically */
+    flex-shrink: 0; /* Prevent shrinking when the todo text is long */
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+input[type="checkbox"]:checked ~ .custom-checkbox{
+    background-color: var(--accent-color);
+}
+input[type="checkbox"]:checked ~ .custom-checkbox svg{
+    fill: var(--primary-color);
+}
+input[type="checkbox"]:checked ~ .todo-text{
+    text-decoration: line-through;
+    color: var(--secondary-color);
+}
+input[type="checkbox"]{
+    display: none; /* Hide the default checkbox */
+}
+
+#quoteContainer {
+    width: 75%;
+    background-color: #1c1d20;
+    margin-top: 50px;
+    text-align: center;
+    height: 200px;
+}
+
+#buttonContainer {
+    width: 100%;
+    text-align: center;
+}
+
+#quoteButton {
+    background-color: var(--accent-color);
+    border: 2px solid #000;
+    border-radius: 100px;
+    color: var(--background-color);
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 15px 30px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#quoteButton:hover {
+    background-color: var(--secondary-color);
+}
+
+#quoteButton:active {
+    transform: scale(0.95); /* Shrink slightly */
+}
+
+#quoteButton:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+/* Responsive design for smaller screens */ 
+@media (max-width: 500px){
+    html{
+        font-size: 12pt;
+    }
+    #add-button{
+        position: unset;
+        width: 100%;
+        margin-top: 10px;
+        padding: 15px;
+        height: auto;
+    }
+    h1{
+        margin-top: 50px;
+        font-size: 15vw;
+    }
+}
+
