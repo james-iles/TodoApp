@@ -27,6 +27,14 @@ body{
     align-items: center;
 }
 
+/* Add class for my hr divider */
+.divider {
+    border: none;
+    border-top: 2px solid var(--alternate-color);
+    margin: 50px auto;
+    width: 50%; 
+}
+
 .footer{
     margin-top: auto; /* Push footer to the bottom */
     padding: 20px 0;
@@ -117,6 +125,10 @@ form{
     font-weight: 600;
     color: var(--background-color);
     cursor: pointer;
+    transition: background-color 0.2s;
+}
+#add-button:hover{
+    background-color: var(--accent-color);
 }
 
 .todo{
@@ -180,8 +192,7 @@ input[type="checkbox"]{
 #quoteContainer {
     width: 75%;
     background-color: #1c1d20;
-    margin-top: 50px;
-    height: auto;;
+    height: auto;
     border-radius: 15px;
     display: flex;
     flex-direction: column; /* stack vertically - so quote above name */
@@ -211,7 +222,7 @@ input[type="checkbox"]{
 }
 
 #quoteButton:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--accent-color);
 }
 
 #quoteButton:active {

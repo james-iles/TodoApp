@@ -1,3 +1,5 @@
+// ====================================================================
+
 const todoForm = document.querySelector('form');
 const todoInput = document.getElementById('todo-input');
 const todoListUL = document.getElementById('todo-list');
@@ -81,6 +83,8 @@ function getTodos(){
     return JSON.parse(todos);
 }
 
+// ====================================================================
+
 document.addEventListener("DOMContentLoaded", () => {
     // Get references to the quote container and button from my html file
   const quoteContainer = document.getElementById("quoteContainer");
@@ -106,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { quote: "Lost time is never found again.", name: "Benjamin Franklin" },
     { quote: "Time is what we want most, but what we use worst.", name: "William Penn" },
     { quote: "I need schnacks.", name: "Emma Jane"},
+    { quote: "Don't be shit.", name: "James Mooney"}
 ];
 
 function getQuote() {
@@ -128,6 +133,8 @@ function getQuote() {
   // Change quote when the button is clicked
   quoteButton.addEventListener("click", getQuote);
 });
+
+// ====================================================================
 
 // Function to update date and time every second
 function updateDateTime() {
@@ -154,3 +161,5 @@ setInterval(updateDateTime, 1000);
 
 // Initial call to display date and time immediately on page load
 updateDateTime();
+
+// ====================================================================
