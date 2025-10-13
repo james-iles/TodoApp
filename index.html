@@ -6,10 +6,17 @@
     <title>Todo App</title>
     <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="dateAndTime">
+        <div id="todaysDate"></div>
+        <div id="currentTime"></div>
+    </div>
 
-    <h1> Today's Big Three </h1>
+    <h1> The Daily Dashboard </h1>
         <div class="wrapper">
             <!-- Create the form to add the Task item. -->
             <form id="todo-form">
@@ -30,7 +37,9 @@
                     <button class="delete-button">
                         <svg fill="var(--secondary-color)" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
                     </button>
-                </li>  -->
+                </li>  
+
+                ^ This is no longer needed as it's now being replicated / replaced in the Javascript file. -->
             </ul>
         </div>
 
@@ -42,7 +51,7 @@
     </div>
 
     <div class="footer">
-         <p>Created by <a href="https://stuffbyjames.uk" target="_blank">stuffbyjames.uk</a></p>
+         <p>This is some more <a href="https://stuffbyjames.uk" target="_blank">stuffbyjames.uk</a></p>
     </div>
 
 </body>

@@ -4,6 +4,7 @@
     --background-color: #101114;
     --accent-color: #6797d2;
     --text-color: #f9f9f9;
+    --alternate-color: #a64998;
 }
 
 *{
@@ -12,7 +13,7 @@
 }
 
 html{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Caladea', serif;
     font-size: 16pt;
     color: var(--text-color);
 }
@@ -34,13 +35,39 @@ body{
 }
 
 .footer a{
-    color: var(--accent-color);
+    color: var(--alternate-color);
     text-decoration: none;
+}
+
+#dateAndTime{
+    width: 700px;
+    max-width: 100%; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+}
+#todaysDate {
+    color: var(--text-color);
+    font-size: 1rem;
+    text-align: center;
+}
+
+#currentTime {
+    color: var(--text-color);
+    font-size: 2rem;
+    font-weight: 600;
+}
+#currentTime .seconds{
+    /* color: var(--secondary-color); */
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 h1{
     margin-top: 100px;
     margin-bottom: 20px;
+    font-family: "Cal Sans", sans-serif;
     font-size: 3rem;
     font-weight: 800;
     color: var(--accent-color);
@@ -81,7 +108,7 @@ form{
     top: 0;
     right: 0; /* Align to the right edge of the form, because the form position is relative */
 
-    background-color: var(--accent-color);
+    background-color: var(--alternate-color);
     height: 100%;
     padding: 0 30px;
     border: none;
@@ -125,7 +152,7 @@ form{
 }
 
 .custom-checkbox{
-    border: 2px solid var(--accent-color);
+    border: 2px solid var(--alternate-color);
     border-radius: 50%;
     min-width: 20px;
     min-height: 20px;
@@ -137,7 +164,7 @@ form{
     cursor: pointer;
 }
 input[type="checkbox"]:checked ~ .custom-checkbox{
-    background-color: var(--accent-color);
+    background-color: var(--alternate-color);
 }
 input[type="checkbox"]:checked ~ .custom-checkbox svg{
     fill: var(--primary-color);
@@ -169,7 +196,7 @@ input[type="checkbox"]{
 }
 
 #quoteButton {
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
     border: 2px solid #000;
     border-radius: 100px;
     color: var(--background-color);

@@ -105,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { quote: "The future depends on what you do today.", name: "Mahatma Gandhi" },
     { quote: "Lost time is never found again.", name: "Benjamin Franklin" },
     { quote: "Time is what we want most, but what we use worst.", name: "William Penn" },
+    { quote: "I need schnacks.", name: "Emma Jane"},
 ];
 
 function getQuote() {
@@ -127,3 +128,29 @@ function getQuote() {
   // Change quote when the button is clicked
   quoteButton.addEventListener("click", getQuote);
 });
+
+// Function to update date and time every second
+function updateDateTime() {
+    const now = new Date();
+
+    const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' };
+    const dateString = now.toLocaleDateString('en-GB', options);
+    const timeString = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+    const timeParts = timeString.split(':'); // ['HH', 'MM', 'SS']
+    const hoursMinutes = `${timeParts[0]}:${timeParts[1]}`;
+    const seconds = timeParts[2];
+
+    document.getElementById('todaysDate').innerHTML = `<p> <span class="date">${dateString}</span></p>`;
+    document.getElementById('currentTime').innerHTML = `${hoursMinutes}<span class="seconds">:${seconds}</span>`;
+}
+
+// Update date and time every second
+setInterval(updateDateTime, 1000);
+
+// Initial call to display date and time immediately on page load
+updateDateTime();
