@@ -1,6 +1,6 @@
 # Daily To-Do Productivity App
 
-Some text
+A simple daily task-planner, built using Javascript, HTML and CSS, and created as a learning project. 
 
 ## Task Manager
 
